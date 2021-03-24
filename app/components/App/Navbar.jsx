@@ -30,6 +30,7 @@ import Container from '../StyledUtils/Container'
 import NotificationsPopupContent from '../Notifications/NotificationsPopupContent'
 import NotificationBell from '../LoggedInUser/NotificationBell'
 import ScoreTag from '../Users/ScoreTag'
+import SearchBox from '../Search/SearchBox'
 
 const NavbarContainer = styled(Flex)`
   position: fixed;
@@ -149,6 +150,7 @@ const Navbar = ({
           </Container>
         </Flex>
         {/* Center - will hold the search bar in the future */}
+        <SearchBox />
         {/* Right */}
         {loggedInUserLoading ? (
           <UserLoading size={38} title="Loading" />

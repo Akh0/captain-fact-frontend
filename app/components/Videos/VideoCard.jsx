@@ -8,6 +8,7 @@ import CardLayout from '../Utils/CardLayout'
 import RawIcon from '../Utils/RawIcon'
 import { videoURL } from '../../lib/cf_routes'
 import { MAX_VIDEO_CARD_SPEAKERS } from '../../constants'
+import { getHDThumbnailUrl } from '../../lib/video_utils'
 
 @withNamespaces('videoDebate')
 export class VideoCard extends React.PureComponent {
@@ -26,7 +27,7 @@ export class VideoCard extends React.PureComponent {
                 <RawIcon name="play-circle" />
               </div>
               <figure className="image is-16by9">
-                <img alt="" src={video.thumbnail} />
+                <img alt="" src={video.thumbnail || getHDThumbnailUrl(video)} />
               </figure>
             </Link>
           }
@@ -49,7 +50,7 @@ export class VideoCard extends React.PureComponent {
           &nbsp;
           <TimeSince time={insertedAt} />
         </div>
-        {speakers.length > 0 && this.renderSpeakersList(speakers, t)}
+        {speakers && speakers.length > 0 && this.renderSpeakersList(speakers, t)}
       </div>
     )
   }

@@ -106,6 +106,10 @@
     "info2": "Les propos des intervenants ci-dessous peuvent être sourcés, confirmés ou réfutés par les membres du site. Les vérifications s'affichent dans la vidéo Youtube si vous avez installé notre extension navigateur contre la désinformation.",
     "more": "En savoir plus"
   },
+  "search": {
+    "placeholder": "Rechercher un sujet, vérification, vidéo, intervenant, utilisateurs...",
+    "loadMore": "Voir plus de résultats"
+  },
   "all": "Toutes",
   "partners": "Partenaires",
   "users": "Utilisateurs",

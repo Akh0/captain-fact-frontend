@@ -8,6 +8,7 @@ import { Provider as ReduxProvider } from 'react-redux'
 import { ApolloProvider } from 'react-apollo'
 import { ThemeProvider } from 'styled-components'
 import { I18nextProvider } from 'react-i18next'
+import { InstantSearch } from 'react-instantsearch-dom'
 
 // Load store
 import store from './state'
@@ -15,6 +16,8 @@ import store from './state'
 // Import APIs so they can load their configurations
 import GraphQLClient from './API/graphql_api'
 import i18n from './i18n/i18n'
+import UserProvider from './components/LoggedInUser/UserProvider'
+import { searchClient } from './lib/algolia'
 
 // Import router
 import CFRouter from './router'
@@ -22,7 +25,6 @@ import CFRouter from './router'
 // Import styles
 import './styles/application.sass'
 import theme from './styles/theme'
-import UserProvider from './components/LoggedInUser/UserProvider'
 
 // Activate polyfills
 smoothSrollPolyfill()
@@ -38,7 +40,9 @@ const App = () => (
       <ApolloProvider client={GraphQLClient}>
         <I18nextProvider i18n={i18n}>
           <UserProvider>
-            <CFRouter />
+            <InstantSearch searchClient={searchClient} indexName="dev_videos">
+              <CFRouter />
+            </InstantSearch>
           </UserProvider>
         </I18nextProvider>
       </ApolloProvider>

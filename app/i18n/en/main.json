@@ -107,6 +107,10 @@
     "info2": "Speaker's statements can be confirm or refute by CaptainFact's members. All verifications are displayed during the video, if you have installed our browser extension.",
     "more": "See more information"
   },
+  "search": {
+    "placeholder": "Search",
+    "loadMore": "Load more"
+  },
   "all": "All",
   "partners": "Partners",
   "users": "Users",
